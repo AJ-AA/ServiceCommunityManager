@@ -1,0 +1,29 @@
+ServiceCommunityManager/
+|-- src/
+    |-- main/
+        |-- java/
+            |-- com/
+                |-- mycommunity/
+                    |-- ServiceCommunityManagerApplication.java
+                    |-- controller/          # Controladores para manejar las solicitudes HTTP
+                    |-- service/            # Servicios para contener la lógica de negocio
+                    |-- repository/         # Repositorios para el acceso a datos
+                    |-- model/              # Entidades y modelos de dominio
+                    |-- config/             # Clases de configuración, como la seguridad y la base de datos
+                    |-- dto/                # Data Transfer Objects si son necesarios
+                    |-- exception/          # Excepciones personalizadas
+                    |-- utility/            # Utilidades y clases helper
+        |-- resources/
+                    |-- static/
+                    |-- templates/
+                    |-- application.properties    # Aquí agregas las configuraciones de H2
+                    |-- data.sql                  # Opcional: datos iniciales para la BD
+                |-- webapp/
+                    |-- WEB-INF/
+            |-- test/
+                |-- java/
+                    |-- com/
+                        |-- mycommunity/
+                            |-- ... (clases de prueba)
+                |-- resources/
+                    |-- application-test.properties

@@ -1,0 +1,50 @@
+Fase 1: Configuración Inicial y Estructura del Proyecto
+Configura Spring Security:
+
+Implementa la autenticación basada en cuentas pre-creadas. Puedes utilizar usuarios y roles definidos en memoria para empezar.
+Configura las URLs que requieren autenticación y las que son públicas (como la página de inicio de sesión).
+Crea las Entidades JPA:
+
+Define las entidades como Usuario, Reserva, Servicio (gimnasio, piscina, etc.), utilizando Hibernate.
+Asegúrate de que cada entidad tenga las anotaciones apropiadas para mapearlas a tu base de datos H2.
+Configura la Base de Datos H2:
+
+Asegúrate de que Spring Boot esté configurado para utilizar la base de datos en memoria H2.
+Opcionalmente, puedes configurar datos iniciales a cargar en la base de datos al inicio.
+Fase 2: Desarrollo de Funcionalidades Básicas
+Implementa la Funcionalidad de Inicio de Sesión:
+
+Crea la página de inicio de sesión usando Thymeleaf y Bootstrap para el diseño.
+Asegúrate de manejar correctamente las credenciales de los usuarios.
+Desarrollo del Frontend:
+
+Utiliza Thymeleaf y Bootstrap para crear las páginas de visualización de reservas y creación de nuevas reservas.
+Implementa formularios para que los usuarios puedan seleccionar el tipo de servicio, fecha y hora.
+Desarrollo del Backend:
+
+Crea los controladores y servicios en Spring Boot para manejar las solicitudes relacionadas con las reservas.
+Implementa la lógica para verificar la capacidad de los servicios antes de confirmar una reserva.
+Fase 3: Funcionalidades Avanzadas y Pruebas
+Integración de Swagger:
+
+Configura Swagger para documentar tus APIs REST. Esto será útil para probar y documentar tus endpoints.
+Pruebas:
+
+Escribe pruebas unitarias y de integración para tus servicios y controladores.
+Utiliza spring-boot-starter-test para facilitar las pruebas.
+Validaciones y Manejo de Errores:
+
+Asegúrate de que la aplicación maneje correctamente los casos de error, como superar la capacidad de los servicios o intentar reservar en horarios no disponibles.
+Refinamiento y Mejora del Frontend:
+
+Mejora la interfaz de usuario basándote en la retroalimentación o requerimientos adicionales.
+Fase 4: Despliegue y Mantenimiento
+Pruebas Finales:
+
+Realiza una serie de pruebas finales para asegurarte de que todos los componentes funcionen juntos sin problemas.
+Despliegue:
+
+Prepara tu aplicación para el despliegue. Si bien estás utilizando una base de datos en memoria, considera la posibilidad de migrar a una base de datos más persistente para el despliegue en producción.
+Documentación:
+
+Documenta tu aplicación y su uso, incluyendo cualquier paso necesario para configurar y ejecutar el sistema.
