@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Reserva</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 50px;
+            background: linear-gradient(135deg, #74EBD5 0%, #9FACE6 100%);
+            font-family: 'Roboto', sans-serif;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 40px;
+            max-width: 600px;
+            margin: auto;
+        }
+        h2 {
+            margin-bottom: 30px;
+            color: #333;
+            text-align: center;
+        }
+        .btn-primary {
+            background-color: #4a8fe7;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            color: white;
+        }
+        .btn-primary:hover {
+            background-color: #377bc8;
+        }
+        .form-group label {
+            color: #4a8fe7; /* Color del texto para hacerlo coincidir con el tema */
+        }
+        .form-control {
+            border-radius: 5px;
+            border: 1px solid #4a8fe7;
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Editar Reserva</h2>
+    <form th:action="@{/reservas/editar}" th:object="${reserva}" method="post">
+        <input type="hidden" th:field="*{id}" />
+        <div class="form-group">
+            <label for="servicio">Servicio</label>
+            <select th:field="*{servicio}" class="form-control" id="servicio">
+                <option value="">Selecciona un servicio</option>
+                <option th:each="servicio : ${serviciosConDisponibilidad}"
+                        th:value="${servicio.id}"
+                        th:text="${servicio.nombre}"
+                        th:selected="${servicio.id == reserva.servicio.id}"></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="fechaHora">Fecha y Hora</label>
+            <input type="datetime-local" th:field="*{fechaHora}" class="form-control" id="fechaHora" />
+        </div>
+        <button type="submit" class="btn btn-primary">Actualizar Reserva</button>
+    </form>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+<!--NP 141350 Antonio Jose Arenal Armesto Feedback Final Programacion Concurrente-->
